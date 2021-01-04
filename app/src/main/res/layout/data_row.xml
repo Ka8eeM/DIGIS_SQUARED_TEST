@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:focusable="true">
+    <!--    android:layout_height="?android:attr/listPreferredItemHeight"-->
+    <ProgressBar
+        android:id="@+id/rsrp_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_column="0"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+
+    <ProgressBar
+        android:id="@+id/rsrq_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_column="0"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+
+    <ProgressBar
+        android:id="@+id/sinr_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_column="0"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+</TableRow>

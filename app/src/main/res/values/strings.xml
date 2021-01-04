@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DIGIS SQUARED TEST</string>
+    <string name="loading">Loading...</string>
+    <string name="rsrp">RSRP</string>
+    <string name="rsrq">RSRQ</string>
+    <string name="sinr">SINR</string>
+</resources>
