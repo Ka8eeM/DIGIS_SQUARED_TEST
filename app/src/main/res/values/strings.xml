@@ -4,4 +4,12 @@
     <string name="rsrp">RSRP</string>
     <string name="rsrq">RSRQ</string>
     <string name="sinr">SINR</string>
+    <string name="show_data_table">Show data table</string>
+    <string name="hide_data_table">Hide data table</string>
+    <string name="show_rsrp">Show RSRP Graph</string>
+    <string name="hide_rsrp">Hide RSRP Graph</string>
+    <string name="show_rsrq">Show RSRQ Graph</string>
+    <string name="hide_rsrq">Hide RSRQ Graph</string>
+    <string name="show_sinr">Show SINR Graph</string>
+    <string name="hide_sinr">Hide SINR Graph</string>
 </resources>

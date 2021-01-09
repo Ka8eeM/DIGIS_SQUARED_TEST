@@ -1,4 +1,4 @@
-package com.ka8eem.digissquaredtest.models;
+package com.ka8eem.digissquaredtest.repository;
 
 import android.util.Pair;
 

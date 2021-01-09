@@ -7,20 +7,44 @@
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:fillViewport="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         tools:context=".ui.MainActivity">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/text_data_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/spacing_large"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:background="@drawable/roundend_darkblue_bg"
+                android:gravity="center_horizontal"
+                android:onClick="toggleDataTable"
+                android:padding="@dimen/spacing_small"
+                android:text="@string/hide_data_table"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
             <TableLayout
                 android:id="@+id/table_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginVertical="30sp"
-                android:background="@color/grey">
+                android:layout_below="@id/text_data_table"
+                android:layout_marginHorizontal="@dimen/spacing_large"
+                android:layout_marginVertical="@dimen/spacing_medium"
+                android:background="@android:color/black"
+                android:visibility="visible">
 
                 <TableRow>
 
@@ -30,7 +54,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/rsrp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/text_size" />
 
                     <TextView
@@ -39,7 +63,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/rsrq"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/text_size" />
 
                     <TextView
@@ -48,10 +72,144 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/sinr"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/text_size" />
                 </TableRow>
             </TableLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/table_layout"
+                android:layout_margin="@dimen/spacing_large">
+
+                <RelativeLayout
+                    android:id="@+id/relative1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true">
+
+                    <TextView
+                        android:id="@+id/show_hide_rsrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/roundend_darkblue_bg"
+                        android:gravity="center_horizontal"
+                        android:onClick="toggleGraph"
+                        android:padding="@dimen/spacing_small"
+                        android:text="@string/show_rsrp"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold" />
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/rsrp_graph"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_below="@id/show_hide_rsrp"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:background="@android:color/background_light"
+                        android:visibility="gone" />
+                    <!-- <com.jjoe64.graphview.GraphView
+                         android:id="@+id/rsrp_graph"
+                         android:layout_width="match_parent"
+                         android:layout_height="300dp"
+                         android:layout_below="@id/show_hide_rsrp"
+                         android:layout_marginTop="@dimen/spacing_small"
+                         android:background="@android:color/background_light"
+                         android:visibility="gone" />-->
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relative2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relative1"
+                    android:layout_marginTop="@dimen/spacing_medium">
+
+                    <TextView
+                        android:id="@+id/show_hide_rsrq"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/roundend_darkblue_bg"
+                        android:gravity="center_horizontal"
+                        android:onClick="toggleGraph"
+                        android:padding="@dimen/spacing_small"
+                        android:text="@string/show_rsrq"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold" />
+
+                    <!--                <com.jjoe64.graphview.GraphView
+                                        android:id="@+id/rsrq_graph"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="300dp"
+                                        android:layout_below="@id/show_hide_rsrq"
+                                        android:layout_marginTop="@dimen/spacing_small"
+                                        android:background="@android:color/background_light"
+                                        android:visibility="gone" />
+                -->
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/rsrq_graph"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_below="@id/show_hide_rsrq"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:background="@android:color/background_light"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relative3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relative2"
+                    android:layout_marginTop="@dimen/spacing_medium">
+
+                    <TextView
+                        android:id="@+id/show_hide_sinr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/roundend_darkblue_bg"
+                        android:gravity="center_horizontal"
+                        android:onClick="toggleGraph"
+                        android:padding="@dimen/spacing_small"
+                        android:text="@string/show_sinr"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold" />
+
+                    <!--                    <com.jjoe64.graphview.GraphView
+                                            android:id="@+id/sinr_graph"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="300dp"
+                                            android:layout_below="@id/show_hide_sinr"
+                                            android:layout_marginTop="@dimen/spacing_small"
+                                            android:background="@android:color/background_light"
+                                            android:visibility="gone" />-->
+
+                    <com.github.mikephil.charting.charts.LineChart
+
+                        android:id="@+id/sinr_graph"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_below="@id/show_hide_sinr"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:background="@android:color/background_light"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
         </RelativeLayout>
+
     </ScrollView>
 </layout>
