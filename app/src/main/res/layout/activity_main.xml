@@ -114,14 +114,6 @@
                         android:layout_marginTop="@dimen/spacing_small"
                         android:background="@android:color/background_light"
                         android:visibility="gone" />
-                    <!-- <com.jjoe64.graphview.GraphView
-                         android:id="@+id/rsrp_graph"
-                         android:layout_width="match_parent"
-                         android:layout_height="300dp"
-                         android:layout_below="@id/show_hide_rsrp"
-                         android:layout_marginTop="@dimen/spacing_small"
-                         android:background="@android:color/background_light"
-                         android:visibility="gone" />-->
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -146,15 +138,6 @@
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
 
-                    <!--                <com.jjoe64.graphview.GraphView
-                                        android:id="@+id/rsrq_graph"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="300dp"
-                                        android:layout_below="@id/show_hide_rsrq"
-                                        android:layout_marginTop="@dimen/spacing_small"
-                                        android:background="@android:color/background_light"
-                                        android:visibility="gone" />
-                -->
                     <com.github.mikephil.charting.charts.LineChart
                         android:id="@+id/rsrq_graph"
                         android:layout_width="match_parent"
@@ -186,15 +169,6 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
-
-                    <!--                    <com.jjoe64.graphview.GraphView
-                                            android:id="@+id/sinr_graph"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="300dp"
-                                            android:layout_below="@id/show_hide_sinr"
-                                            android:layout_marginTop="@dimen/spacing_small"
-                                            android:background="@android:color/background_light"
-                                            android:visibility="gone" />-->
 
                     <com.github.mikephil.charting.charts.LineChart
 
